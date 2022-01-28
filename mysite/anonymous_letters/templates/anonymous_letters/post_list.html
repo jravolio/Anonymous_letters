@@ -1,0 +1,27 @@
+{% extends 'anonymous_letters/base.html' %}
+{% load static %}
+
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="{% static 'css/anonymous_letters.css' %}">
+        <title>Página inical</title>
+</head>
+<body>
+    {% block content %}
+    <div class="header">
+        <h1>Como funciona?</h1>
+        <p>lorem ipsumlorem ipsumlorem ipsumlorem ipsum</p>
+    </div>
+    {% for post in posts %}
+    <div>
+        <h2><a href="">{{ post.title }}</a></h2>
+        <p>{{ post.text|linebreaksbr }}</p>
+        <p>created_date: {{ post.published_date }}</p>
+    </div>
+{% endfor %}
+{% endblock %}
+</body>
+</html>
